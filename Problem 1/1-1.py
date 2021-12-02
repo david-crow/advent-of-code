@@ -1,4 +1,5 @@
 # --- Day 1: Sonar Sweep ---
+# https://adventofcode.com/2021/day/1
 
 # You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!
 
@@ -41,8 +42,6 @@
 # In this example, there are 7 measurements that are larger than the previous measurement.
 
 # How many measurements are larger than the previous measurement?
-
-# To begin, get your puzzle input (https://adventofcode.com/2021/day/1/input).
 
 depths = list(map(int, open("Problem 1/1-1.dat", "r").read().split()))
 increased_count = 0

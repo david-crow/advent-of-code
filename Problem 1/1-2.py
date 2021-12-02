@@ -1,4 +1,5 @@
 # --- Part Two ---
+# https://adventofcode.com/2021/day/1
 
 # Considering every single measurement isn't as useful as you expected: there's just too much noise in the data.
 
@@ -31,8 +32,6 @@
 # In this example, there are 5 sums that are larger than the previous sum.
 
 # Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
-
-# Although it hasn't changed, you can still get your puzzle input (https://adventofcode.com/2021/day/1/input).
 
 depths = list(map(int, open("Problem 1/1-1.dat", "r").read().split()))
 count, previous = 0, sum(depths[:3])
