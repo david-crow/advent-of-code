@@ -7,18 +7,15 @@ data = get_data(day=day, year=year)
 
 # solution
 
-data = [d.split() for d in data.split("\n")]
-x, y = 0, 0
+fish = [int(d) for d in data.split(",")]
+fish = [fish.count(i) for i in range(9)]
 
-for d in data:
-    direction, distance = d[0], int(d[1])
+for _ in range(80):
+    num = fish.pop(0)
+    fish[6] += num
+    fish.append(num)
 
-    if direction == "forward":
-        x += distance
-    else:
-        y += distance if direction == "down" else -distance
-
-answer = x * y
+answer = sum(fish)
 
 # submission
 
