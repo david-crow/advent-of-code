@@ -11,11 +11,12 @@ from itertools import permutations
 
 data = [d.split() for d in data.split("\n")]
 routes = {(line[0], line[2]) : int(line[4]) for line in data}
-cities = list(set([line[0] for line in data]))
-distances = []
 
 for k, v in list(routes.items()):
     routes[(k[1], k[0])] = v
+
+cities = list(set([route[0] for route in routes.keys()]))
+answer = int(1e10)
 
 for route in permutations(cities):
     distance = 0
@@ -23,12 +24,8 @@ for route in permutations(cities):
     for i in range(len(route) - 1):
         distance += routes[(route[i], route[i + 1])]
 
-    distances.append(distance)
-
-print(distances)
-answer = min(distances)
+    answer = min(answer, distance)
 
 # submission
 
-print(answer)
-# submit(answer, part=part, day=day, year=year)
+submit(answer, part=part, day=day, year=year)
