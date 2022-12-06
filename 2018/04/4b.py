@@ -15,7 +15,7 @@ data = [(list(map(int, re.findall("[0-9]+", d[0]))), d[1].split(" ")) for d in d
 times = defaultdict(lambda: [0] * 60)
 
 for d in data:
-    match(event := d[1][0]):
+    match event := d[1][0]:
         case "Guard":
             guard = d[1][1][1:]
         case "falls":
