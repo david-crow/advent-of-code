@@ -8,9 +8,11 @@ lines = data.splitlines()
 
 # solution
 
-print(data)
+x, y = 25, 6
+layers = [data[i : i + x * y] for i in range(0, len(data), x * y)]
+min_layer = min(layers, key=lambda layer: layer.count("0"))
+answer = min_layer.count("1") * min_layer.count("2")
 
 # submission
 
-# print(answer)
-# submit(answer, part=part, day=day, year=year)
+submit(answer, part=part, day=day, year=year)
